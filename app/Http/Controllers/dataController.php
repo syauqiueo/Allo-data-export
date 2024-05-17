@@ -51,9 +51,10 @@ class DataController extends Controller
 		return redirect('/');
 	}
 
-    public function delete(Request $request)
+    public function delete()
     {
-        ModelsData::truncate();
+        ModelsData::truncate();// notifikasi dengan session
+		Session::flash('sukses','Data Jira Berhasil Dihapus!');
 		return redirect('/');
     }
 }

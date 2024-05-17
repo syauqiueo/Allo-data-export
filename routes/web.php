@@ -20,4 +20,4 @@ Route::get('/', function () {
 
 Route::get('/', [DataController::class, 'index']);
 Route::post('/import', [DataController::class, 'import']);
-Route::post('/delete', [DataController::class, 'delete']);
+Route::get('/delete', [DataController::class, 'delete']);

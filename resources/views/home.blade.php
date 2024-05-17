@@ -30,37 +30,11 @@
 			IMPORT EXCEL
 		</button>
 
-		<!-- Import Excel -->
-		<div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<form method="post" action="/import" enctype="multipart/form-data">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
-						</div>
-						<div class="modal-body">
-
-							{{ csrf_field() }}
-
-							<label>Pilih file excel</label>
-							<div class="form-group">
-								<input type="file" name="file" required="required">
-							</div>
-
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary">Import</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-
 
 
 		<a href="/siswa/export_excel" class="btn btn-success my-3" target="_blank">EXPORT EXCEL</a>
-        <a  href="/delete" class="btn btn-success my-3" target="_blank">DELETE DATA</a>
+        <a href="{{ url('/delete') }}" class="btn btn-xs btn-info pull-right">DELETE EXCEL</a>
+
 
 		<table class='table table-bordered'>
 			<thead>
@@ -93,6 +67,36 @@
 			</tbody>
 		</table>
 	</div>
+
+
+
+
+		<!-- Import Excel -->
+		<div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<form method="post" action="/import" enctype="multipart/form-data">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
+						</div>
+						<div class="modal-body">
+
+							{{ csrf_field() }}
+
+							<label>Pilih file excel</label>
+							<div class="form-group">
+								<input type="file" name="file" required="required">
+							</div>
+
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<button type="submit" class="btn btn-primary">Import</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
 
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
