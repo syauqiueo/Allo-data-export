@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/', [DataController::class, 'index']);
+Route::post('/import', [DataController::class, 'import']);
+Route::post('/delete', [DataController::class, 'delete']);
